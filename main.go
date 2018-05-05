@@ -1,10 +1,6 @@
 package main
 
-import "fmt"
-
-func main() {
-	fmt.Println("Hello world")
-}
+func main() {}
 
 type I interface {
 	Param(i interface {
