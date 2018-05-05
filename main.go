@@ -3,10 +3,10 @@ package main
 func main() {}
 
 type I interface {
-	Param(interface {
+	M1(interface {
 		I
 	})
-	Return() interface {
+	M2(interface {
 		I
-	}
+	})
 }
