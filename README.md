@@ -1,6 +1,25 @@
 ## hung-compiler
 
-This program causes the go compiler to hang indefinitely.
+This program causes the go compiler to hang indefinitely:
+
+```go
+package main
+
+func main() {}
+
+type I interface {
+	M1() interface {
+		I
+	}
+	M2() interface {
+		I
+	}
+}
+```
+
+If you remove either of the two interface method definitions (M1 or M2), it compiles. Furthermore, it seems to exhibit the same behavior whether the anonymous interfaces are for the return types, the parameter types, or a mixture of the two.
+
+Tested with go1.10.2.
 
 ### Try it yourself
 
